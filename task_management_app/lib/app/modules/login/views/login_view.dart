@@ -60,7 +60,7 @@ class LoginView extends GetView<LoginController> {
                                 fontSize: 30,
                               ),
                             ),
-                            const Text(
+                            Text(
                               'Start Journey With US',
                               style: TextStyle(
                                 color: Colors.white,
@@ -79,6 +79,8 @@ class LoginView extends GetView<LoginController> {
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(50),
                     bottomRight: Radius.circular(50),
+                    topLeft: Radius.circular(50),
+                    bottomLeft: Radius.circular(50),
                   ),
                   color: Colors.white,
                 ),
