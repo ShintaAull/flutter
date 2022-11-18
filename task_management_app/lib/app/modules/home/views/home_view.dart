@@ -89,20 +89,75 @@ class HomeView extends GetView<HomeController> {
                     ),
               //content / isi page / screen
               Expanded(
-                  child: Container(
-                padding: const EdgeInsets.all(50),
-                margin: !context.isPhone
-                    ? const EdgeInsets.all(10)
-                    : const EdgeInsets.all(0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: !context.isPhone
-                      ? BorderRadius.circular(50)
-                      : BorderRadius.circular(30),
+                child: Container(
+                  padding: const EdgeInsets.all(50),
+                  margin: !context.isPhone
+                      ? const EdgeInsets.all(10)
+                      : const EdgeInsets.all(0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: !context.isPhone
+                        ? BorderRadius.circular(50)
+                        : BorderRadius.circular(30),
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                        'My Task',
+                        style: TextStyle(
+                            color: AppColors.primaryText, fontSize: 30),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      SizedBox(
+                        height: 20,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          children: [
+                            Container(
+                              width: 400,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.brown,
+                              ),
+                              child: Column(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(30),
+                                    // ignore: prefer_const_constructors
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.amber,
+                                      radius: 25,
+                                      foregroundImage: NetworkImage(
+                                        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                      ),
+                                    ),
+                                  ),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(30),
+                                    // ignore: prefer_const_constructors
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.amber,
+                                      radius: 25,
+                                      foregroundImage: NetworkImage(
+                                        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ))
+              )
             ]),
-          )
+          ),
         ],
       ),
     );
