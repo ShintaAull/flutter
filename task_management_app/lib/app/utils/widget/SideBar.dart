@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_management_app/app/routes/app_pages.dart';
+import 'package:task_management_app/app/utils/widget/style/AppColors.dart';
 import 'package:unicons/unicons.dart';
 
 class SideBar extends StatelessWidget {
@@ -15,7 +16,7 @@ class SideBar extends StatelessWidget {
       elevation: 0,
       child: Container(
         height: Get.height,
-        color: Colors.blue[100],
+        color: AppColors.primaryBg,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -52,7 +53,7 @@ class SideBar extends StatelessWidget {
                             Get.currentRoute == '/home'
                                 ? UniconsLine.desktop
                                 : UniconsLine.desktop_alt,
-                            color: Colors.grey,
+                            color: AppColors.primaryText,
                             size: 30,
                           ),
                         ),
@@ -62,7 +63,7 @@ class SideBar extends StatelessWidget {
                         const Text(
                           'Home',
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: AppColors.primaryText,
                             fontSize: 16,
                           ),
                         ),

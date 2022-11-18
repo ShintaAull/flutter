@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_management_app/app/routes/app_pages.dart';
+import 'package:task_management_app/app/utils/widget/style/AppColors.dart';
 import 'package:unicons/unicons.dart';
 
 class header extends StatelessWidget {
@@ -23,11 +24,11 @@ class header extends StatelessWidget {
             children: const [
               Text(
                 'Task Management',
-                style: TextStyle(fontSize: 30, color: Colors.grey),
+                style: TextStyle(fontSize: 30, color: AppColors.primaryText),
               ),
               Text(
                 'Manage Task Made Easy With Friends',
-                style: TextStyle(fontSize: 16, color: Colors.grey),
+                style: TextStyle(fontSize: 16, color: AppColors.primaryText),
               ),
             ],
           ),
@@ -60,7 +61,11 @@ class header extends StatelessWidget {
           const SizedBox(
             width: 20,
           ),
-          const Icon(UniconsLine.sign_out_alt, color: Colors.grey),
+          const Icon(
+            UniconsLine.sign_out_alt,
+            color: Colors.grey,
+            size: 30,
+          ),
           const SizedBox(
             width: 20,
           ),
@@ -83,12 +88,19 @@ class header extends StatelessWidget {
               children: const [
                 Text(
                   'Sign Out',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(
+                    color: AppColors.primaryText,
+                    fontSize: 13,
+                  ),
                 ),
                 SizedBox(
                   width: 5,
                 ),
-                Icon(UniconsLine.sign_out_alt, color: Colors.grey),
+                Icon(
+                  UniconsLine.sign_out_alt,
+                  color: AppColors.primaryText,
+                  size: 30,
+                ),
               ],
             ),
           ),
