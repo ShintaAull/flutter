@@ -8,6 +8,7 @@ import 'package:task_management_app/app/utils/widget/header.dart';
 import 'package:task_management_app/app/utils/widget/sideBar.dart';
 import 'package:task_management_app/app/utils/widget/style/AppColors.dart';
 
+import '../../../utils/widget/upcomingTask.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -19,146 +20,853 @@ class HomeView extends GetView<HomeController> {
       key: _drawerKey,
       drawer: const SideBar(),
       backgroundColor: AppColors.primaryBg,
-      body: Row(
-        children: [
-          !context.isPhone
-              ? Expanded(
-                  flex: 2,
-                  child: const SideBar(),
-                )
-              : const SizedBox(),
-          Expanded(
-            flex: 15,
-            child: Column(children: [
-              !context.isPhone
-                  ? const header()
-                  : Container(
-                      padding: EdgeInsets.all(20),
-                      child: Row(
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              _drawerKey.currentState!.openDrawer();
-                            },
-                            icon: Icon(
-                              Icons.menu,
-                              color: AppColors.primaryText,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          Column(
-                            // mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                'Task Management',
-                                style: TextStyle(
-                                    fontSize: 20, color: AppColors.primaryText),
-                              ),
-                              Text(
-                                'Manage Task Made Easy With Friends',
-                                style: TextStyle(
-                                    fontSize: 14, color: AppColors.primaryText),
-                              ),
-                            ],
-                          ),
-                          const Spacer(),
-                          const Icon(
-                            Icons.notifications,
-                            color: AppColors.primaryText,
-                            size: 30,
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(30),
-                            // ignore: prefer_const_constructors
-                            child: CircleAvatar(
-                              backgroundColor: Colors.amber,
-                              radius: 25,
-                              foregroundImage: NetworkImage(
-                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-              //content / isi page / screen
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.all(50),
-                  margin: !context.isPhone
-                      ? const EdgeInsets.all(10)
-                      : const EdgeInsets.all(0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: !context.isPhone
-                        ? BorderRadius.circular(50)
-                        : BorderRadius.circular(30),
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        'My Task',
-                        style: TextStyle(
-                            color: AppColors.primaryText, fontSize: 30),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      SizedBox(
-                        height: 200,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          shrinkWrap: true,
+      body: SafeArea(
+        child: Row(
+          children: [
+            !context.isPhone
+                ? const Expanded(
+                    flex: 2,
+                    child: SideBar(),
+                  )
+                : const SizedBox(),
+            Expanded(
+              flex: 15,
+              child: Column(children: [
+                !context.isPhone
+                    ? const header()
+                    : Container(
+                        padding: const EdgeInsets.all(20),
+                        child: Row(
                           children: [
-                            Container(
-                              width: 400,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.brown,
+                            IconButton(
+                              onPressed: () {
+                                _drawerKey.currentState!.openDrawer();
+                              },
+                              icon: const Icon(
+                                Icons.menu,
+                                color: AppColors.primaryText,
                               ),
-                              child: Column(
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(30),
-                                    // ignore: prefer_const_constructors
-                                    child: CircleAvatar(
-                                      backgroundColor: Colors.amber,
-                                      radius: 25,
-                                      foregroundImage: NetworkImage(
-                                        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
-                                      ),
-                                    ),
-                                  ),
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(30),
-                                    // ignore: prefer_const_constructors
-                                    child: CircleAvatar(
-                                      backgroundColor: Colors.amber,
-                                      radius: 25,
-                                      foregroundImage: NetworkImage(
-                                        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
-                                      ),
-                                    ),
-                                  )
-                                ],
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              // mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text(
+                                  'Task Management',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: AppColors.primaryText),
+                                ),
+                                Text(
+                                  'Manage Task Made Easy With Friends',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      color: AppColors.primaryText),
+                                ),
+                              ],
+                            ),
+                            const Spacer(),
+                            const Icon(
+                              Icons.notifications,
+                              color: AppColors.primaryText,
+                              size: 30,
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              // ignore: prefer_const_constructors
+                              child: CircleAvatar(
+                                backgroundColor: Colors.amber,
+                                radius: 25,
+                                foregroundImage: const NetworkImage(
+                                  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                ),
                               ),
                             )
                           ],
                         ),
-                      )
-                    ],
+                      ),
+                //content / isi page / screen
+                Expanded(
+                  child: Container(
+                    padding: !context.isPhone
+                        ? const EdgeInsets.all(50)
+                        : const EdgeInsets.all(20),
+                    margin: !context.isPhone
+                        ? const EdgeInsets.all(10)
+                        : const EdgeInsets.all(0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: !context.isPhone
+                          ? BorderRadius.circular(50)
+                          : BorderRadius.circular(30),
+                    ),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: Get.height * 0.3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'My Task',
+                                  style: TextStyle(
+                                      color: AppColors.primaryText,
+                                      fontSize: 30),
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                // my task
+                                SizedBox(
+                                  height: 200,
+                                  child: ListView(
+                                    clipBehavior: Clip.antiAlias,
+                                    scrollDirection: Axis.horizontal,
+                                    shrinkWrap: true,
+                                    children: [
+                                      Container(
+                                        width: 400,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: AppColors.cardBg,
+                                        ),
+                                        padding: const EdgeInsets.all(20),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(25),
+                                                  // ignore: prefer_const_constructors
+                                                  child: const CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.amber,
+                                                    radius: 20,
+                                                    foregroundImage:
+                                                        NetworkImage(
+                                                      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                                    ),
+                                                  ),
+                                                ),
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(25),
+                                                  // ignore: prefer_const_constructors
+                                                  child: const CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.amber,
+                                                    radius: 20,
+                                                    foregroundImage: NetworkImage(
+                                                        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                                  ),
+                                                ),
+                                                // ignore: prefer_const_constructors
+                                                Spacer(),
+                                                Container(
+                                                  height: 25,
+                                                  width: 80,
+                                                  color: AppColors.primaryBg,
+                                                  child: const Center(
+                                                      child: Text(
+                                                    '100%',
+                                                    style: TextStyle(
+                                                      color:
+                                                          AppColors.primaryText,
+                                                      fontSize: 20,
+                                                    ),
+                                                  )),
+                                                ),
+                                              ],
+                                            ),
+                                            const Spacer(),
+                                            Container(
+                                              height: 25,
+                                              width: 80,
+                                              color: AppColors.primaryBg,
+                                              child: const Center(
+                                                  child: Text(
+                                                '10 / 10 Task',
+                                                style: TextStyle(
+                                                  color: AppColors.primaryText,
+                                                ),
+                                              )),
+                                            ),
+                                            const Text(
+                                              'Pemograman Mobile',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                            const Text(
+                                              'Deadline 2 hari lagi',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 15,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            child: Row(
+                              children: [UpcomingTask()],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            height: 200,
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              shrinkWrap: true,
+                              children: [
+                                Container(
+                                  width: 400,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: AppColors.cardBg,
+                                  ),
+                                  margin: const EdgeInsets.all(20),
+                                  padding: const EdgeInsets.all(20),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            // ignore: prefer_const_constructors
+                                            child: const CircleAvatar(
+                                              backgroundColor: Colors.amber,
+                                              radius: 20,
+                                              foregroundImage: NetworkImage(
+                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                              ),
+                                            ),
+                                          ),
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            // ignore: prefer_const_constructors
+                                            child: const CircleAvatar(
+                                              backgroundColor: Colors.amber,
+                                              radius: 20,
+                                              foregroundImage: NetworkImage(
+                                                  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                            ),
+                                          ),
+                                          // ignore: prefer_const_constructors
+                                          Spacer(),
+                                          Container(
+                                            height: 25,
+                                            width: 80,
+                                            color: AppColors.primaryBg,
+                                            child: const Center(
+                                                child: Text(
+                                              '100%',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 20,
+                                              ),
+                                            )),
+                                          ),
+                                        ],
+                                      ),
+                                      const Spacer(),
+                                      Container(
+                                        height: 25,
+                                        width: 80,
+                                        color: AppColors.primaryBg,
+                                        child: const Center(
+                                          child: Text(
+                                            '10 / 10 Task',
+                                            style: TextStyle(
+                                              color: AppColors.primaryText,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const Text(
+                                        'Pemograman Mobile',
+                                        style: TextStyle(
+                                          color: AppColors.primaryText,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      const Text(
+                                        'Deadline 2 hari lagi',
+                                        style: TextStyle(
+                                          color: AppColors.primaryText,
+                                          fontSize: 15,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  width: 400,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: AppColors.cardBg,
+                                  ),
+                                  margin: const EdgeInsets.all(20),
+                                  padding: const EdgeInsets.all(20),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            // ignore: prefer_const_constructors
+                                            child: const CircleAvatar(
+                                              backgroundColor: Colors.amber,
+                                              radius: 20,
+                                              foregroundImage: NetworkImage(
+                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                              ),
+                                            ),
+                                          ),
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            // ignore: prefer_const_constructors
+                                            child: const CircleAvatar(
+                                              backgroundColor: Colors.amber,
+                                              radius: 20,
+                                              foregroundImage: NetworkImage(
+                                                  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                            ),
+                                          ),
+                                          // ignore: prefer_const_constructors
+                                          Spacer(),
+                                          Container(
+                                            height: 25,
+                                            width: 80,
+                                            color: AppColors.primaryBg,
+                                            child: const Center(
+                                                child: Text(
+                                              '100%',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 20,
+                                              ),
+                                            )),
+                                          ),
+                                        ],
+                                      ),
+                                      const Spacer(),
+                                      Container(
+                                        height: 25,
+                                        width: 80,
+                                        color: AppColors.primaryBg,
+                                        child: const Center(
+                                          child: Text(
+                                            '10 / 10 Task',
+                                            style: TextStyle(
+                                              color: AppColors.primaryText,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const Text(
+                                        'Pemograman Mobile',
+                                        style: TextStyle(
+                                          color: AppColors.primaryText,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      const Text(
+                                        'Deadline 2 hari lagi',
+                                        style: TextStyle(
+                                          color: AppColors.primaryText,
+                                          fontSize: 15,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  width: 400,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: AppColors.cardBg,
+                                  ),
+                                  margin: const EdgeInsets.all(20),
+                                  padding: const EdgeInsets.all(20),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            // ignore: prefer_const_constructors
+                                            child: const CircleAvatar(
+                                              backgroundColor: Colors.amber,
+                                              radius: 20,
+                                              foregroundImage: NetworkImage(
+                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                              ),
+                                            ),
+                                          ),
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            // ignore: prefer_const_constructors
+                                            child: const CircleAvatar(
+                                              backgroundColor: Colors.amber,
+                                              radius: 20,
+                                              foregroundImage: NetworkImage(
+                                                  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                            ),
+                                          ),
+                                          // ignore: prefer_const_constructors
+                                          Spacer(),
+                                          Container(
+                                            height: 25,
+                                            width: 80,
+                                            color: AppColors.primaryBg,
+                                            child: const Center(
+                                                child: Text(
+                                              '100%',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 20,
+                                              ),
+                                            )),
+                                          ),
+                                        ],
+                                      ),
+                                      const Spacer(),
+                                      Container(
+                                        height: 25,
+                                        width: 80,
+                                        color: AppColors.primaryBg,
+                                        child: const Center(
+                                            child: Text(
+                                          '10 / 10 Task',
+                                          style: TextStyle(
+                                            color: AppColors.primaryText,
+                                          ),
+                                        )),
+                                      ),
+                                      const Text(
+                                        'Pemograman Mobile',
+                                        style: TextStyle(
+                                          color: AppColors.primaryText,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      const Text(
+                                        'Deadline 2 hari lagi',
+                                        style: TextStyle(
+                                          color: AppColors.primaryText,
+                                          fontSize: 15,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  width: 400,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: AppColors.cardBg,
+                                  ),
+                                  margin: const EdgeInsets.all(20),
+                                  padding: const EdgeInsets.all(20),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            // ignore: prefer_const_constructors
+                                            child: const CircleAvatar(
+                                              backgroundColor: Colors.amber,
+                                              radius: 20,
+                                              foregroundImage: NetworkImage(
+                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                              ),
+                                            ),
+                                          ),
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            // ignore: prefer_const_constructors
+                                            child: const CircleAvatar(
+                                              backgroundColor: Colors.amber,
+                                              radius: 20,
+                                              foregroundImage: NetworkImage(
+                                                  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                            ),
+                                          ),
+                                          // ignore: prefer_const_constructors
+                                          Spacer(),
+                                          Container(
+                                            height: 25,
+                                            width: 80,
+                                            color: AppColors.primaryBg,
+                                            child: const Center(
+                                              child: Text(
+                                                '100%',
+                                                style: TextStyle(
+                                                  color: AppColors.primaryText,
+                                                  fontSize: 20,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const Spacer(),
+                                      Container(
+                                        height: 25,
+                                        width: 80,
+                                        color: AppColors.primaryBg,
+                                        child: const Center(
+                                          child: Text(
+                                            '10 / 10 Task',
+                                            style: TextStyle(
+                                              color: AppColors.primaryText,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const Text(
+                                        'Pemograman Mobile',
+                                        style: TextStyle(
+                                          color: AppColors.primaryText,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      const Text(
+                                        'Deadline 2 hari lagi',
+                                        style: TextStyle(
+                                          color: AppColors.primaryText,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        'Upcoming Task',
+                                        style: TextStyle(
+                                            color: AppColors.primaryText,
+                                            fontSize: 30),
+                                      ),
+                                      const SizedBox(
+                                        height: 20,
+                                      ),
+                                      SizedBox(
+                                        height: 400,
+                                        child: ListView(
+                                          clipBehavior: Clip.antiAlias,
+                                          //scrollDirection: Axis.vertical,
+                                          shrinkWrap: true,
+                                          children: [
+                                            SizedBox(
+                                              height: 400,
+                                              child: Container(
+                                                //width: 400,
+                                                //height: 200,
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                      20,
+                                                    ),
+                                                    color: AppColors.cardBg),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'My Friends',
+                                      style: TextStyle(
+                                          color: AppColors.primaryText,
+                                          fontSize: 30),
+                                    ),
+                                    const Text(
+                                      'More',
+                                      style: TextStyle(
+                                          color: AppColors.primaryText,
+                                          fontSize: 30),
+                                    ),
+                                    const Icon(
+                                      Icons.arrow_forward,
+                                      color: AppColors.primaryText,
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                      child: ListView(
+                                        clipBehavior: Clip.antiAlias,
+                                        scrollDirection: Axis.vertical,
+                                        shrinkWrap: true,
+                                        children: [
+                                          Container(
+                                            height: 200,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              color: AppColors.cardBg,
+                                            ),
+                                            margin: const EdgeInsets.all(20),
+                                            padding: const EdgeInsets.all(20),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              25),
+                                                      // ignore: prefer_const_constructors
+                                                      child: const CircleAvatar(
+                                                        backgroundColor:
+                                                            Colors.amber,
+                                                        radius: 20,
+                                                        foregroundImage:
+                                                            NetworkImage(
+                                                          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              25),
+                                                      // ignore: prefer_const_constructors
+                                                      child: const CircleAvatar(
+                                                        backgroundColor:
+                                                            Colors.amber,
+                                                        radius: 20,
+                                                        foregroundImage:
+                                                            NetworkImage(
+                                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                                      ),
+                                                    ),
+                                                    // ignore: prefer_const_constructors
+                                                    Spacer(),
+                                                    Container(
+                                                      height: 25,
+                                                      width: 80,
+                                                      color:
+                                                          AppColors.primaryBg,
+                                                      child: const Center(
+                                                        child: Text(
+                                                          '100%',
+                                                          style: TextStyle(
+                                                            color: AppColors
+                                                                .primaryText,
+                                                            fontSize: 20,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                const Spacer(),
+                                                Container(
+                                                  height: 25,
+                                                  width: 80,
+                                                  color: AppColors.primaryBg,
+                                                  child: const Center(
+                                                    child: Text(
+                                                      '10 / 10 Task',
+                                                      style: TextStyle(
+                                                        color: AppColors
+                                                            .primaryText,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                const Text(
+                                                  'Pemograman Mobile',
+                                                  style: TextStyle(
+                                                    color:
+                                                        AppColors.primaryText,
+                                                    fontSize: 20,
+                                                  ),
+                                                ),
+                                                const Text(
+                                                  'Deadline 2 hari lagi',
+                                                  style: TextStyle(
+                                                    color:
+                                                        AppColors.primaryText,
+                                                    fontSize: 15,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            height: 200,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              color: AppColors.cardBg,
+                                            ),
+                                            margin: const EdgeInsets.all(20),
+                                            padding: const EdgeInsets.all(20),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              25),
+                                                      // ignore: prefer_const_constructors
+                                                      child: const CircleAvatar(
+                                                        backgroundColor:
+                                                            Colors.amber,
+                                                        radius: 20,
+                                                        foregroundImage:
+                                                            NetworkImage(
+                                                          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              25),
+                                                      // ignore: prefer_const_constructors
+                                                      child: const CircleAvatar(
+                                                        backgroundColor:
+                                                            Colors.amber,
+                                                        radius: 20,
+                                                        foregroundImage:
+                                                            NetworkImage(
+                                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                                      ),
+                                                    ),
+                                                    // ignore: prefer_const_constructors
+                                                    Spacer(),
+                                                    Container(
+                                                      height: 25,
+                                                      width: 80,
+                                                      color:
+                                                          AppColors.primaryBg,
+                                                      child: const Center(
+                                                        child: Text(
+                                                          '100%',
+                                                          style: TextStyle(
+                                                            color: AppColors
+                                                                .primaryText,
+                                                            fontSize: 20,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                const Spacer(),
+                                                Container(
+                                                  height: 25,
+                                                  width: 80,
+                                                  color: AppColors.primaryBg,
+                                                  child: const Center(
+                                                    child: Text(
+                                                      '10 / 10 Task',
+                                                      style: TextStyle(
+                                                        color: AppColors
+                                                            .primaryText,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                const Text(
+                                                  'Pemograman Mobile',
+                                                  style: TextStyle(
+                                                    color:
+                                                        AppColors.primaryText,
+                                                    fontSize: 20,
+                                                  ),
+                                                ),
+                                                const Text(
+                                                  'Deadline 2 hari lagi',
+                                                  style: TextStyle(
+                                                    color:
+                                                        AppColors.primaryText,
+                                                    fontSize: 15,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ]),
                   ),
-                ),
-              )
-            ]),
-          ),
-        ],
+                )
+              ]),
+            ),
+          ],
+        ),
       ),
     );
   }
