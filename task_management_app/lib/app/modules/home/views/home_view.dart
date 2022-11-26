@@ -84,7 +84,7 @@ class HomeView extends GetView<HomeController> {
                                 backgroundColor: Colors.amber,
                                 radius: 25,
                                 foregroundImage: const NetworkImage(
-                                  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                                 ),
                               ),
                             )
@@ -138,11 +138,44 @@ class HomeView extends GetView<HomeController> {
                                               BorderRadius.circular(20),
                                           color: AppColors.cardBg,
                                         ),
-                                        padding: const EdgeInsets.all(20),
+                                        padding: EdgeInsets.all(20),
                                         child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
                                           children: [
+                                            Row(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(25),
+                                                  child: const CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.amber,
+                                                    radius: 20,
+                                                    foregroundImage:
+                                                        NetworkImage(
+                                                      'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
+                                                    ),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height: 25,
+                                                  width: 80,
+                                                  color: AppColors.primaryBg,
+                                                  child: Text('100%'),
+                                                ),
+                                              ],
+                                            ),
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(25),
+                                              // ignore: prefer_const_constructors
+                                              child: const CircleAvatar(
+                                                backgroundColor: Colors.amber,
+                                                radius: 20,
+                                                foregroundImage: NetworkImage(
+                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
+                                                ),
+                                              ),
+                                            ),
                                             Row(
                                               children: [
                                                 ClipRRect(
@@ -155,7 +188,7 @@ class HomeView extends GetView<HomeController> {
                                                     radius: 20,
                                                     foregroundImage:
                                                         NetworkImage(
-                                                      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                                      'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                                                     ),
                                                   ),
                                                 ),
@@ -168,7 +201,7 @@ class HomeView extends GetView<HomeController> {
                                                         Colors.amber,
                                                     radius: 20,
                                                     foregroundImage: NetworkImage(
-                                                        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                                        'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
                                                   ),
                                                 ),
                                                 // ignore: prefer_const_constructors
@@ -178,14 +211,15 @@ class HomeView extends GetView<HomeController> {
                                                   width: 80,
                                                   color: AppColors.primaryBg,
                                                   child: const Center(
-                                                      child: Text(
-                                                    '100%',
-                                                    style: TextStyle(
-                                                      color:
-                                                          AppColors.primaryText,
-                                                      fontSize: 20,
+                                                    child: Text(
+                                                      '100%',
+                                                      style: TextStyle(
+                                                        color: AppColors
+                                                            .primaryText,
+                                                        fontSize: 20,
+                                                      ),
                                                     ),
-                                                  )),
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -261,7 +295,7 @@ class HomeView extends GetView<HomeController> {
                                               backgroundColor: Colors.amber,
                                               radius: 20,
                                               foregroundImage: NetworkImage(
-                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                                               ),
                                             ),
                                           ),
@@ -273,7 +307,7 @@ class HomeView extends GetView<HomeController> {
                                               backgroundColor: Colors.amber,
                                               radius: 20,
                                               foregroundImage: NetworkImage(
-                                                  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
                                             ),
                                           ),
                                           // ignore: prefer_const_constructors
@@ -346,7 +380,7 @@ class HomeView extends GetView<HomeController> {
                                               backgroundColor: Colors.amber,
                                               radius: 20,
                                               foregroundImage: NetworkImage(
-                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                                               ),
                                             ),
                                           ),
@@ -358,7 +392,7 @@ class HomeView extends GetView<HomeController> {
                                               backgroundColor: Colors.amber,
                                               radius: 20,
                                               foregroundImage: NetworkImage(
-                                                  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
                                             ),
                                           ),
                                           // ignore: prefer_const_constructors
@@ -431,7 +465,7 @@ class HomeView extends GetView<HomeController> {
                                               backgroundColor: Colors.amber,
                                               radius: 20,
                                               foregroundImage: NetworkImage(
-                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                                               ),
                                             ),
                                           ),
@@ -443,7 +477,7 @@ class HomeView extends GetView<HomeController> {
                                               backgroundColor: Colors.amber,
                                               radius: 20,
                                               foregroundImage: NetworkImage(
-                                                  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
                                             ),
                                           ),
                                           // ignore: prefer_const_constructors
@@ -453,13 +487,14 @@ class HomeView extends GetView<HomeController> {
                                             width: 80,
                                             color: AppColors.primaryBg,
                                             child: const Center(
-                                                child: Text(
-                                              '100%',
-                                              style: TextStyle(
-                                                color: AppColors.primaryText,
-                                                fontSize: 20,
+                                              child: Text(
+                                                '100%',
+                                                style: TextStyle(
+                                                  color: AppColors.primaryText,
+                                                  fontSize: 20,
+                                                ),
                                               ),
-                                            )),
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -469,12 +504,13 @@ class HomeView extends GetView<HomeController> {
                                         width: 80,
                                         color: AppColors.primaryBg,
                                         child: const Center(
-                                            child: Text(
-                                          '10 / 10 Task',
-                                          style: TextStyle(
-                                            color: AppColors.primaryText,
+                                          child: Text(
+                                            '10 / 10 Task',
+                                            style: TextStyle(
+                                              color: AppColors.primaryText,
+                                            ),
                                           ),
-                                        )),
+                                        ),
                                       ),
                                       const Text(
                                         'Pemograman Mobile',
@@ -489,7 +525,7 @@ class HomeView extends GetView<HomeController> {
                                           color: AppColors.primaryText,
                                           fontSize: 15,
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -515,7 +551,7 @@ class HomeView extends GetView<HomeController> {
                                               backgroundColor: Colors.amber,
                                               radius: 20,
                                               foregroundImage: NetworkImage(
-                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                                               ),
                                             ),
                                           ),
@@ -527,7 +563,7 @@ class HomeView extends GetView<HomeController> {
                                               backgroundColor: Colors.amber,
                                               radius: 20,
                                               foregroundImage: NetworkImage(
-                                                  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
                                             ),
                                           ),
                                           // ignore: prefer_const_constructors
@@ -636,6 +672,7 @@ class HomeView extends GetView<HomeController> {
                                           color: AppColors.primaryText,
                                           fontSize: 30),
                                     ),
+                                    Spacer(),
                                     const Text(
                                       'More',
                                       style: TextStyle(
@@ -643,12 +680,13 @@ class HomeView extends GetView<HomeController> {
                                           fontSize: 30),
                                     ),
                                     const Icon(
-                                      Icons.arrow_forward,
+                                      Icons.forward,
                                       color: AppColors.primaryText,
                                     ),
                                     const SizedBox(
                                       height: 20,
                                     ),
+                                    SizedBox(),
                                     SizedBox(
                                       height: 20,
                                       child: ListView(
@@ -682,7 +720,7 @@ class HomeView extends GetView<HomeController> {
                                                         radius: 20,
                                                         foregroundImage:
                                                             NetworkImage(
-                                                          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                                          'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                                                         ),
                                                       ),
                                                     ),
@@ -697,11 +735,10 @@ class HomeView extends GetView<HomeController> {
                                                         radius: 20,
                                                         foregroundImage:
                                                             NetworkImage(
-                                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
                                                       ),
                                                     ),
                                                     // ignore: prefer_const_constructors
-                                                    Spacer(),
                                                     Container(
                                                       height: 25,
                                                       width: 80,
@@ -780,7 +817,7 @@ class HomeView extends GetView<HomeController> {
                                                         radius: 20,
                                                         foregroundImage:
                                                             NetworkImage(
-                                                          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg",
+                                                          'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                                                         ),
                                                       ),
                                                     ),
@@ -795,7 +832,7 @@ class HomeView extends GetView<HomeController> {
                                                         radius: 20,
                                                         foregroundImage:
                                                             NetworkImage(
-                                                                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/640px-Elon_Musk_2015.jpg"),
+                                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
                                                       ),
                                                     ),
                                                     // ignore: prefer_const_constructors
