@@ -140,6 +140,8 @@ class HomeView extends GetView<HomeController> {
                                         ),
                                         padding: EdgeInsets.all(20),
                                         child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Row(
                                               children: [
@@ -156,13 +158,46 @@ class HomeView extends GetView<HomeController> {
                                                     ),
                                                   ),
                                                 ),
+                                                Spacer(),
                                                 Container(
                                                   height: 25,
                                                   width: 80,
                                                   color: AppColors.primaryBg,
-                                                  child: Text('100%'),
+                                                  child: Center(
+                                                      child: Text('100%')),
                                                 ),
                                               ],
+                                            ),
+                                            Spacer(),
+                                            const Spacer(),
+                                            Container(
+                                              height: 25,
+                                              width: 80,
+                                              color: AppColors.primaryBg,
+                                              child: const Center(
+                                                  child: Text(
+                                                '10 / 10 Task',
+                                                style: TextStyle(
+                                                  color: AppColors.primaryText,
+                                                ),
+                                              )),
+                                            ),
+                                            // ignore: prefer_const_constructors
+                                            Text(
+                                              'Pemrograman Internet',
+                                              // ignore: prefer_const_constructors
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                            // ignore: prefer_const_constructors
+                                            Text(
+                                              'Deadline 1 hari lagi',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 15,
+                                              ),
                                             ),
                                             ClipRRect(
                                               borderRadius:
@@ -228,7 +263,7 @@ class HomeView extends GetView<HomeController> {
                                               height: 25,
                                               width: 80,
                                               color: AppColors.primaryBg,
-                                              child: const Center(
+                                              child: Center(
                                                   child: Text(
                                                 '10 / 10 Task',
                                                 style: TextStyle(
@@ -256,655 +291,344 @@ class HomeView extends GetView<HomeController> {
                                     ],
                                   ),
                                 ),
-                              ],
-                            ),
-                          ),
-                          Expanded(
-                            child: Row(
-                              children: [UpcomingTask()],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          SizedBox(
-                            height: 200,
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              shrinkWrap: true,
-                              children: [
-                                Container(
-                                  width: 400,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: AppColors.cardBg,
-                                  ),
-                                  margin: const EdgeInsets.all(20),
-                                  padding: const EdgeInsets.all(20),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                SizedBox(
+                                  height: 200,
+                                  child: ListView(
+                                    clipBehavior: Clip.antiAlias,
+                                    scrollDirection: Axis.horizontal,
+                                    shrinkWrap: true,
                                     children: [
-                                      Row(
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
-                                            child: const CircleAvatar(
-                                              backgroundColor: Colors.amber,
-                                              radius: 20,
-                                              foregroundImage: NetworkImage(
-                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
-                                              ),
-                                            ),
-                                          ),
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
-                                            child: const CircleAvatar(
-                                              backgroundColor: Colors.amber,
-                                              radius: 20,
-                                              foregroundImage: NetworkImage(
-                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
-                                            ),
-                                          ),
-                                          // ignore: prefer_const_constructors
-                                          Spacer(),
-                                          Container(
-                                            height: 25,
-                                            width: 80,
-                                            color: AppColors.primaryBg,
-                                            child: const Center(
-                                                child: Text(
-                                              '100%',
-                                              style: TextStyle(
-                                                color: AppColors.primaryText,
-                                                fontSize: 20,
-                                              ),
-                                            )),
-                                          ),
-                                        ],
-                                      ),
-                                      const Spacer(),
                                       Container(
-                                        height: 25,
-                                        width: 80,
-                                        color: AppColors.primaryBg,
-                                        child: const Center(
-                                          child: Text(
-                                            '10 / 10 Task',
-                                            style: TextStyle(
-                                              color: AppColors.primaryText,
-                                            ),
-                                          ),
+                                        width: 400,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: AppColors.cardBg,
                                         ),
-                                      ),
-                                      const Text(
-                                        'Pemograman Mobile',
-                                        style: TextStyle(
-                                          color: AppColors.primaryText,
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                      const Text(
-                                        'Deadline 2 hari lagi',
-                                        style: TextStyle(
-                                          color: AppColors.primaryText,
-                                          fontSize: 15,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  width: 400,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: AppColors.cardBg,
-                                  ),
-                                  margin: const EdgeInsets.all(20),
-                                  padding: const EdgeInsets.all(20),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
-                                            child: const CircleAvatar(
-                                              backgroundColor: Colors.amber,
-                                              radius: 20,
-                                              foregroundImage: NetworkImage(
-                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
-                                              ),
-                                            ),
-                                          ),
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
-                                            child: const CircleAvatar(
-                                              backgroundColor: Colors.amber,
-                                              radius: 20,
-                                              foregroundImage: NetworkImage(
-                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
-                                            ),
-                                          ),
-                                          // ignore: prefer_const_constructors
-                                          Spacer(),
-                                          Container(
-                                            height: 25,
-                                            width: 80,
-                                            color: AppColors.primaryBg,
-                                            child: const Center(
-                                                child: Text(
-                                              '100%',
-                                              style: TextStyle(
-                                                color: AppColors.primaryText,
-                                                fontSize: 20,
-                                              ),
-                                            )),
-                                          ),
-                                        ],
-                                      ),
-                                      const Spacer(),
-                                      Container(
-                                        height: 25,
-                                        width: 80,
-                                        color: AppColors.primaryBg,
-                                        child: const Center(
-                                          child: Text(
-                                            '10 / 10 Task',
-                                            style: TextStyle(
-                                              color: AppColors.primaryText,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      const Text(
-                                        'Pemograman Mobile',
-                                        style: TextStyle(
-                                          color: AppColors.primaryText,
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                      const Text(
-                                        'Deadline 2 hari lagi',
-                                        style: TextStyle(
-                                          color: AppColors.primaryText,
-                                          fontSize: 15,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  width: 400,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: AppColors.cardBg,
-                                  ),
-                                  margin: const EdgeInsets.all(20),
-                                  padding: const EdgeInsets.all(20),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
-                                            child: const CircleAvatar(
-                                              backgroundColor: Colors.amber,
-                                              radius: 20,
-                                              foregroundImage: NetworkImage(
-                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
-                                              ),
-                                            ),
-                                          ),
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
-                                            child: const CircleAvatar(
-                                              backgroundColor: Colors.amber,
-                                              radius: 20,
-                                              foregroundImage: NetworkImage(
-                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
-                                            ),
-                                          ),
-                                          // ignore: prefer_const_constructors
-                                          Spacer(),
-                                          Container(
-                                            height: 25,
-                                            width: 80,
-                                            color: AppColors.primaryBg,
-                                            child: const Center(
-                                              child: Text(
-                                                '100%',
-                                                style: TextStyle(
-                                                  color: AppColors.primaryText,
-                                                  fontSize: 20,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      const Spacer(),
-                                      Container(
-                                        height: 25,
-                                        width: 80,
-                                        color: AppColors.primaryBg,
-                                        child: const Center(
-                                          child: Text(
-                                            '10 / 10 Task',
-                                            style: TextStyle(
-                                              color: AppColors.primaryText,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      const Text(
-                                        'Pemograman Mobile',
-                                        style: TextStyle(
-                                          color: AppColors.primaryText,
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                      const Text(
-                                        'Deadline 2 hari lagi',
-                                        style: TextStyle(
-                                          color: AppColors.primaryText,
-                                          fontSize: 15,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  width: 400,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: AppColors.cardBg,
-                                  ),
-                                  margin: const EdgeInsets.all(20),
-                                  padding: const EdgeInsets.all(20),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
-                                            child: const CircleAvatar(
-                                              backgroundColor: Colors.amber,
-                                              radius: 20,
-                                              foregroundImage: NetworkImage(
-                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
-                                              ),
-                                            ),
-                                          ),
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            // ignore: prefer_const_constructors
-                                            child: const CircleAvatar(
-                                              backgroundColor: Colors.amber,
-                                              radius: 20,
-                                              foregroundImage: NetworkImage(
-                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
-                                            ),
-                                          ),
-                                          // ignore: prefer_const_constructors
-                                          Spacer(),
-                                          Container(
-                                            height: 25,
-                                            width: 80,
-                                            color: AppColors.primaryBg,
-                                            child: const Center(
-                                              child: Text(
-                                                '100%',
-                                                style: TextStyle(
-                                                  color: AppColors.primaryText,
-                                                  fontSize: 20,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      const Spacer(),
-                                      Container(
-                                        height: 25,
-                                        width: 80,
-                                        color: AppColors.primaryBg,
-                                        child: const Center(
-                                          child: Text(
-                                            '10 / 10 Task',
-                                            style: TextStyle(
-                                              color: AppColors.primaryText,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      const Text(
-                                        'Pemograman Mobile',
-                                        style: TextStyle(
-                                          color: AppColors.primaryText,
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                      const Text(
-                                        'Deadline 2 hari lagi',
-                                        style: TextStyle(
-                                          color: AppColors.primaryText,
-                                          fontSize: 15,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: SingleChildScrollView(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      const Text(
-                                        'Upcoming Task',
-                                        style: TextStyle(
-                                            color: AppColors.primaryText,
-                                            fontSize: 30),
-                                      ),
-                                      const SizedBox(
-                                        height: 20,
-                                      ),
-                                      SizedBox(
-                                        height: 400,
-                                        child: ListView(
-                                          clipBehavior: Clip.antiAlias,
-                                          //scrollDirection: Axis.vertical,
-                                          shrinkWrap: true,
+                                        padding: EdgeInsets.all(20),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
-                                            SizedBox(
-                                              height: 400,
-                                              child: Container(
-                                                //width: 400,
-                                                //height: 200,
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                      20,
+                                            Row(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(25),
+                                                  child: const CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.amber,
+                                                    radius: 20,
+                                                    foregroundImage:
+                                                        NetworkImage(
+                                                      'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                                                     ),
-                                                    color: AppColors.cardBg),
+                                                  ),
+                                                ),
+                                                Spacer(),
+                                                Container(
+                                                  height: 25,
+                                                  width: 80,
+                                                  color: AppColors.primaryBg,
+                                                  child: Center(
+                                                      child: Text('100%')),
+                                                ),
+                                              ],
+                                            ),
+                                            Spacer(),
+                                            const Spacer(),
+                                            Container(
+                                              height: 25,
+                                              width: 80,
+                                              color: AppColors.primaryBg,
+                                              child: const Center(
+                                                  child: Text(
+                                                '10 / 10 Task',
+                                                style: TextStyle(
+                                                  color: AppColors.primaryText,
+                                                ),
+                                              )),
+                                            ),
+                                            // ignore: prefer_const_constructors
+                                            Text(
+                                              'Pemrograman Internet',
+                                              // ignore: prefer_const_constructors
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                            // ignore: prefer_const_constructors
+                                            Text(
+                                              'Deadline 1 hari lagi',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(25),
+                                              // ignore: prefer_const_constructors
+                                              child: const CircleAvatar(
+                                                backgroundColor: Colors.amber,
+                                                radius: 20,
+                                                foregroundImage: NetworkImage(
+                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
+                                                ),
+                                              ),
+                                            ),
+                                            Row(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(25),
+                                                  // ignore: prefer_const_constructors
+                                                  child: const CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.amber,
+                                                    radius: 20,
+                                                    foregroundImage:
+                                                        NetworkImage(
+                                                      'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
+                                                    ),
+                                                  ),
+                                                ),
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(25),
+                                                  // ignore: prefer_const_constructors
+                                                  child: const CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.amber,
+                                                    radius: 20,
+                                                    foregroundImage: NetworkImage(
+                                                        'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
+                                                  ),
+                                                ),
+                                                // ignore: prefer_const_constructors
+                                                Spacer(),
+                                                Container(
+                                                  height: 25,
+                                                  width: 80,
+                                                  color: AppColors.primaryBg,
+                                                  child: const Center(
+                                                    child: Text(
+                                                      '100%',
+                                                      style: TextStyle(
+                                                        color: AppColors
+                                                            .primaryText,
+                                                        fontSize: 20,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            const Spacer(),
+                                            Container(
+                                              height: 25,
+                                              width: 80,
+                                              color: AppColors.primaryBg,
+                                              child: Center(
+                                                  child: Text(
+                                                '10 / 10 Task',
+                                                style: TextStyle(
+                                                  color: AppColors.primaryText,
+                                                ),
+                                              )),
+                                            ),
+                                            const Text(
+                                              'Pemograman Mobile',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                            const Text(
+                                              'Deadline 2 hari lagi',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 15,
                                               ),
                                             )
                                           ],
                                         ),
-                                      ),
+                                      )
                                     ],
                                   ),
                                 ),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      'My Friends',
-                                      style: TextStyle(
-                                          color: AppColors.primaryText,
-                                          fontSize: 30),
-                                    ),
-                                    Spacer(),
-                                    const Text(
-                                      'More',
-                                      style: TextStyle(
-                                          color: AppColors.primaryText,
-                                          fontSize: 30),
-                                    ),
-                                    const Icon(
-                                      Icons.forward,
-                                      color: AppColors.primaryText,
-                                    ),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    SizedBox(),
-                                    SizedBox(
-                                      height: 20,
-                                      child: ListView(
-                                        clipBehavior: Clip.antiAlias,
-                                        scrollDirection: Axis.vertical,
-                                        shrinkWrap: true,
-                                        children: [
-                                          Container(
-                                            height: 200,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: AppColors.cardBg,
-                                            ),
-                                            margin: const EdgeInsets.all(20),
-                                            padding: const EdgeInsets.all(20),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                SizedBox(
+                                  height: 200,
+                                  child: ListView(
+                                    clipBehavior: Clip.antiAlias,
+                                    scrollDirection: Axis.horizontal,
+                                    shrinkWrap: true,
+                                    children: [
+                                      Container(
+                                        width: 400,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: AppColors.cardBg,
+                                        ),
+                                        padding: EdgeInsets.all(20),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
                                               children: [
-                                                Row(
-                                                  children: [
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25),
-                                                      // ignore: prefer_const_constructors
-                                                      child: const CircleAvatar(
-                                                        backgroundColor:
-                                                            Colors.amber,
-                                                        radius: 20,
-                                                        foregroundImage:
-                                                            NetworkImage(
-                                                          'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
-                                                        ),
-                                                      ),
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(25),
+                                                  child: const CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.amber,
+                                                    radius: 20,
+                                                    foregroundImage:
+                                                        NetworkImage(
+                                                      'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                                                     ),
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25),
-                                                      // ignore: prefer_const_constructors
-                                                      child: const CircleAvatar(
-                                                        backgroundColor:
-                                                            Colors.amber,
-                                                        radius: 20,
-                                                        foregroundImage:
-                                                            NetworkImage(
-                                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
-                                                      ),
-                                                    ),
-                                                    // ignore: prefer_const_constructors
-                                                    Container(
-                                                      height: 25,
-                                                      width: 80,
-                                                      color:
-                                                          AppColors.primaryBg,
-                                                      child: const Center(
-                                                        child: Text(
-                                                          '100%',
-                                                          style: TextStyle(
-                                                            color: AppColors
-                                                                .primaryText,
-                                                            fontSize: 20,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
+                                                  ),
                                                 ),
-                                                const Spacer(),
+                                                Spacer(),
+                                                Container(
+                                                  height: 25,
+                                                  width: 80,
+                                                  color: AppColors.primaryBg,
+                                                  child: Center(
+                                                      child: Text('100%')),
+                                                ),
+                                              ],
+                                            ),
+                                            Spacer(),
+                                            const Spacer(),
+                                            Container(
+                                              height: 25,
+                                              width: 80,
+                                              color: AppColors.primaryBg,
+                                              child: const Center(
+                                                  child: Text(
+                                                '10 / 10 Task',
+                                                style: TextStyle(
+                                                  color: AppColors.primaryText,
+                                                ),
+                                              )),
+                                            ),
+                                            // ignore: prefer_const_constructors
+                                            Text(
+                                              'Pemrograman Internet',
+                                              // ignore: prefer_const_constructors
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                            // ignore: prefer_const_constructors
+                                            Text(
+                                              'Deadline 1 hari lagi',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(25),
+                                              // ignore: prefer_const_constructors
+                                              child: const CircleAvatar(
+                                                backgroundColor: Colors.amber,
+                                                radius: 20,
+                                                foregroundImage: NetworkImage(
+                                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
+                                                ),
+                                              ),
+                                            ),
+                                            Row(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(25),
+                                                  // ignore: prefer_const_constructors
+                                                  child: const CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.amber,
+                                                    radius: 20,
+                                                    foregroundImage:
+                                                        NetworkImage(
+                                                      'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
+                                                    ),
+                                                  ),
+                                                ),
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(25),
+                                                  // ignore: prefer_const_constructors
+                                                  child: const CircleAvatar(
+                                                    backgroundColor:
+                                                        Colors.amber,
+                                                    radius: 20,
+                                                    foregroundImage: NetworkImage(
+                                                        'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
+                                                  ),
+                                                ),
+                                                // ignore: prefer_const_constructors
+                                                Spacer(),
                                                 Container(
                                                   height: 25,
                                                   width: 80,
                                                   color: AppColors.primaryBg,
                                                   child: const Center(
                                                     child: Text(
-                                                      '10 / 10 Task',
+                                                      '100%',
                                                       style: TextStyle(
                                                         color: AppColors
                                                             .primaryText,
+                                                        fontSize: 20,
                                                       ),
                                                     ),
-                                                  ),
-                                                ),
-                                                const Text(
-                                                  'Pemograman Mobile',
-                                                  style: TextStyle(
-                                                    color:
-                                                        AppColors.primaryText,
-                                                    fontSize: 20,
-                                                  ),
-                                                ),
-                                                const Text(
-                                                  'Deadline 2 hari lagi',
-                                                  style: TextStyle(
-                                                    color:
-                                                        AppColors.primaryText,
-                                                    fontSize: 15,
                                                   ),
                                                 ),
                                               ],
                                             ),
-                                          ),
-                                          Container(
-                                            height: 200,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: AppColors.cardBg,
+                                            const Spacer(),
+                                            Container(
+                                              height: 25,
+                                              width: 80,
+                                              color: AppColors.primaryBg,
+                                              child: Center(
+                                                  child: Text(
+                                                '10 / 10 Task',
+                                                style: TextStyle(
+                                                  color: AppColors.primaryText,
+                                                ),
+                                              )),
                                             ),
-                                            margin: const EdgeInsets.all(20),
-                                            padding: const EdgeInsets.all(20),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Row(
-                                                  children: [
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25),
-                                                      // ignore: prefer_const_constructors
-                                                      child: const CircleAvatar(
-                                                        backgroundColor:
-                                                            Colors.amber,
-                                                        radius: 20,
-                                                        foregroundImage:
-                                                            NetworkImage(
-                                                          'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              25),
-                                                      // ignore: prefer_const_constructors
-                                                      child: const CircleAvatar(
-                                                        backgroundColor:
-                                                            Colors.amber,
-                                                        radius: 20,
-                                                        foregroundImage:
-                                                            NetworkImage(
-                                                                'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27'),
-                                                      ),
-                                                    ),
-                                                    // ignore: prefer_const_constructors
-                                                    Spacer(),
-                                                    Container(
-                                                      height: 25,
-                                                      width: 80,
-                                                      color:
-                                                          AppColors.primaryBg,
-                                                      child: const Center(
-                                                        child: Text(
-                                                          '100%',
-                                                          style: TextStyle(
-                                                            color: AppColors
-                                                                .primaryText,
-                                                            fontSize: 20,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                const Spacer(),
-                                                Container(
-                                                  height: 25,
-                                                  width: 80,
-                                                  color: AppColors.primaryBg,
-                                                  child: const Center(
-                                                    child: Text(
-                                                      '10 / 10 Task',
-                                                      style: TextStyle(
-                                                        color: AppColors
-                                                            .primaryText,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                const Text(
-                                                  'Pemograman Mobile',
-                                                  style: TextStyle(
-                                                    color:
-                                                        AppColors.primaryText,
-                                                    fontSize: 20,
-                                                  ),
-                                                ),
-                                                const Text(
-                                                  'Deadline 2 hari lagi',
-                                                  style: TextStyle(
-                                                    color:
-                                                        AppColors.primaryText,
-                                                    fontSize: 15,
-                                                  ),
-                                                ),
-                                              ],
+                                            const Text(
+                                              'Pemograman Mobile',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 20,
+                                              ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ]),
-                  ),
-                )
+                                            const Text(
+                                              'Deadline 2 hari lagi',
+                                              style: TextStyle(
+                                                color: AppColors.primaryText,
+                                                fontSize: 15,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+             
+                ),
               ]),
             ),
-          ],
-        ),
-      ),
+          ],),
     );
   }
 }
