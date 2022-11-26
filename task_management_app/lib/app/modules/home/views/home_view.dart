@@ -17,21 +17,21 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _drawerKey,
-      drawer: const SideBar(),
-      backgroundColor: AppColors.primaryBg,
-      body: SafeArea(
-        child: Row(
-          children: [
-            !context.isPhone
-                ? const Expanded(
-                    flex: 2,
-                    child: SideBar(),
-                  )
-                : const SizedBox(),
-            Expanded(
-              flex: 15,
-              child: Column(children: [
+        key: _drawerKey,
+        drawer: const SideBar(),
+        backgroundColor: AppColors.primaryBg,
+        body: SafeArea(
+            child: Row(children: [
+          !context.isPhone
+              ? const Expanded(
+                  flex: 2,
+                  child: SideBar(),
+                )
+              : const SizedBox(),
+          Expanded(
+            flex: 15,
+            child: Column(
+              children: [
                 !context.isPhone
                     ? const header()
                     : Container(
@@ -107,11 +107,11 @@ class HomeView extends GetView<HomeController> {
                           : BorderRadius.circular(30),
                     ),
                     child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: Get.height * 0.3,
-                            child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: Get.height * 0.3,
+                          child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Text(
@@ -624,11 +624,16 @@ class HomeView extends GetView<HomeController> {
                                       )
                                     ],
                                   ),
-             
+                                ),
+                              ]),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ]),
+              ],
             ),
-          ],),
-    );
+          ),
+        ])));
   }
 }
